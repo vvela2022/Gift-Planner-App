@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from .models import Board
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
 
 # Create your views here.
@@ -46,3 +46,9 @@ class BoardCreate(CreateView):
 class BoardDetail(DetailView):
     model = Board
     template_name = 'board_detail.html'
+
+class BoardUpdate(UpdateView):
+    model = Board
+    fields = ['title', 'image', 'about']
+    template_name = 'board_update.html'
+    success_url = '/boards/'
