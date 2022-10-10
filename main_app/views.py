@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from .models import Board
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -55,4 +55,9 @@ class BoardUpdate(UpdateView):
     template_name = 'board_update.html'
     def get_success_url(self):
         return reverse('board_detail', kwargs={'pk': self.object.pk})
+
+class BoardDelete(DeleteView):
+    model = Board
+    template_name = 'board_delete_confirmation.html'
+    success_url = '/boards/'
    

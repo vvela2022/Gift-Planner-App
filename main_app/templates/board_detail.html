@@ -9,6 +9,9 @@
     <a href="{% url 'board_update' board.pk %}">Edit Board</a>
 </div>
 <div>
+    <a href="{% url 'board_delete' board.pk %}">Delete Board</a>
+</div>
+<div>
     <h1>{{board.title}}</h1>
     <h4>{{board.about}}</h4>
 </div>

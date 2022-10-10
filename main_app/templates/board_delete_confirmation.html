@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block title %}Board Delete Confirmation{% endblock %}
+{% block content %}
+<h1>Are you sure you want to Delete {{board.title}}</h1>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <input class="button" type="submit" value="Confirm"/>
+        <a href="{% url 'board_detail' board.pk %}">Cancel</a>
+    </div>
+</form>
+{% endblock %}
