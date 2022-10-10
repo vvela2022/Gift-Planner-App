@@ -15,6 +15,55 @@
     <h1>{{board.title}}</h1>
     <h4>{{board.about}}</h4>
 </div>
+
+<!-- adding form for new gift_idea -->
+<form form action="{% url 'gift_create' board.pk%}" method="post">
+    {% csrf_token %}
+    <div>
+        <div>
+            <input 
+                class="input" 
+                type="text"
+                name="idea" 
+                placeholder="Enter Gift Idea" 
+                required
+            />
+        </div>
+        <div>
+            <input 
+                class="input" 
+                type="text"
+                name="image" 
+                placeholder="image" 
+                required
+            />
+        </div>
+        <div>
+            <input 
+                class="input" 
+                type="text"
+                name="link" 
+                placeholder="link to gift idea" 
+                required
+            />
+        </div>
+        <div>
+            <input 
+                class="input" 
+                type="date"
+                name="date_needed" 
+                placeholder="YYYY-MM-DD" 
+                required
+            />
+        </div>
+        <div>
+            <input type="submit" value="Add Gift Idea"/>
+        </div>
+        
+    </div>
+
+</form>
+
 <div>
     <h3>Gift Ideas</h3>
     {% for gift in board.gifts.all %}
@@ -25,7 +74,6 @@
             <img src="{{gift.image}}" alt={{gift.idea}}/>
         </a>
         <p>Date to purchase by: {{gift.date_needed}}</p>
-
     </div>
 </div>
 {% endfor %}

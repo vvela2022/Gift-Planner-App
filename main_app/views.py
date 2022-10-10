@@ -1,8 +1,9 @@
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
-from .models import Board
+from .models import Board, Gift_Idea
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -60,4 +61,15 @@ class BoardDelete(DeleteView):
     model = Board
     template_name = 'board_delete_confirmation.html'
     success_url = '/boards/'
+
+class Gift_IdeaCreate(View):
+
+    def post(self, request, pk):
+        idea = request.POST.get('idea')
+        image = request.POST.get('image')
+        link = request.POST.get('link')
+        date_needed = request.POST.get('date_needed')
+        board = Board.objects.get(pk=pk)
+        Gift_Idea.objects.create(idea=idea, image=image, link=link, date_needed=date_needed, board=board)
+        return redirect('board_detail', pk=pk)
    
