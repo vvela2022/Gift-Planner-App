@@ -1,8 +1,7 @@
 {% extends 'base.html'%}
 {% block title %}Boards{% endblock %}
 {% block content %}
-<h1>Your Boards</h1>
-<h2>{{header}}</h2>
+<h3>{{header}}</h3>
 
 <form>
     <div>
@@ -18,25 +17,31 @@
 </form>
 
 
-{% for board in boards %}
 
-    <div class="card-container">
-        <a href="{% url 'board_detail' board.pk %}">
-            <div>
-                <img src="{{board.image}}" alt="{{board.title}}"/>
-            </div>
-        </a>
-            <div>
-                <h3>{{board.title}}</h3>
+
+    <div class="row">
+        {% for board in boards %}
+        <div class="col s6 m3">
+            <div class="card">
+                <div class="card-image">
+                    <a href="{% url 'board_detail' board.pk %}">
+                    <img src="{{board.image}}" alt="{{board.title}}"/>
+                    </a>
+                    <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+                </div>
+                <div class="card-content">
+                    <h3>{{board.title}}</h3>
+                    <p>{{board.about}}</p>
+                </div>
             </div>
         </div>
+        {% empty %}
+            <div>
+                <p>No Boards Avalable</p>
+            </div>
+        {% endfor %}
+    </div>
 
-
-{% empty %}
-<div>
-    <p>No Boards Avalable</p>
-</div>
-{% endfor %}
 
 {% endblock %}
 
