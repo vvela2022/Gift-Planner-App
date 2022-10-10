@@ -3,6 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from .models import Board
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 
@@ -34,3 +35,9 @@ class BoardList(TemplateView):
             context["boards"] = Board.objects.all()
             context['header'] = f"Enter your search below"
         return context
+
+class BoardCreate(CreateView):
+    model = Board
+    fields = ['title', 'image', 'about']
+    template_name = 'board_create.html'
+    sucess_url = '/boards/'
