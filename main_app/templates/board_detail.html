@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Board Detail{% endblock %}
+{% block content %}
+
+<div>
+    <img src="{{board.image}}" alt={{board.title}}/>
+</div>
+<div>
+    <h1>{{board.title}}</h1>
+    <h4>{{board.about}}</h4>
+</div>
+
+{% endblock %}

@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from .models import Board
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 # Create your views here.
 
@@ -40,4 +41,8 @@ class BoardCreate(CreateView):
     model = Board
     fields = ['title', 'image', 'about']
     template_name = 'board_create.html'
-    sucess_url = '/boards/'
+    success_url = '/boards/'
+
+class BoardDetail(DetailView):
+    model = Board
+    template_name = 'board_detail.html'
