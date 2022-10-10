@@ -26,5 +26,9 @@ class BoardList(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["boards"] = Board.objects.all()
+        title = self.request.GET.get('title')
+        if title != None:
+            context['boards'] = Board.objects.filter(title__icontains=title)
+        else:
+            context["boards"] = Board.objects.all()
         return context
