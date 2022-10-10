@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from .models import Board
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -41,7 +42,8 @@ class BoardCreate(CreateView):
     model = Board
     fields = ['title', 'image', 'about']
     template_name = 'board_create.html'
-    success_url = '/boards/'
+    def get_success_url(self):
+        return reverse('board_detail', kwargs={'pk': self.object.pk})
 
 class BoardDetail(DetailView):
     model = Board
@@ -51,4 +53,6 @@ class BoardUpdate(UpdateView):
     model = Board
     fields = ['title', 'image', 'about']
     template_name = 'board_update.html'
-    success_url = '/boards/'
+    def get_success_url(self):
+        return reverse('board_detail', kwargs={'pk': self.object.pk})
+   
