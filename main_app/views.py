@@ -29,6 +29,8 @@ class BoardList(TemplateView):
         title = self.request.GET.get('title')
         if title != None:
             context['boards'] = Board.objects.filter(title__icontains=title)
+            context['header'] = f"Searching for {title}"
         else:
             context["boards"] = Board.objects.all()
+            context['header'] = f"Enter your search below"
         return context
