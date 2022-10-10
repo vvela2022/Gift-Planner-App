@@ -15,5 +15,18 @@
     <h1>{{board.title}}</h1>
     <h4>{{board.about}}</h4>
 </div>
+<div>
+    <h3>Gift Ideas</h3>
+    {% for gift in board.gifts.all %}
+    <div>
+        <span>{{forloop.counter}}</span>
+        <span><b>{{gift.idea}}</b></span>
+        <a href="{{gift.link}}">
+            <img src="{{gift.image}}" alt={{gift.idea}}/>
+        </a>
+        <p>Date to purchase by: {{gift.date_needed}}</p>
 
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
