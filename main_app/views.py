@@ -8,6 +8,8 @@ from django.views.generic import DetailView
 from django.urls import reverse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 # Create your views here.
@@ -18,6 +20,7 @@ class Home(TemplateView):
 class About(TemplateView):
     template_name = "about.html"
 
+@method_decorator(login_required, name='dispatch')
 class BoardList(TemplateView):
     template_name = "board_list.html"
     
