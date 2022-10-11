@@ -32,7 +32,7 @@ class BoardList(TemplateView):
             context['header'] = f"Searching for {title}"
         else:
             context["boards"] = Board.objects.filter(user=self.request.user)
-            context['header'] = f"Enter your search below"
+            context['header'] = f"Enter search for boards below"
         return context
 
 class BoardCreate(CreateView):

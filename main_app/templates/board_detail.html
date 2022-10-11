@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% block title %}Board Detail{% endblock %}
 {% block content %}
-
-<div>
-    <img src="{{board.image}}" alt={{board.title}}/>
-</div>
-<div>
-    <a href="{% url 'board_update' board.pk %}">Edit Board</a>
-</div>
-<div>
-    <a href="{% url 'board_delete' board.pk %}">Delete Board</a>
-</div>
 <div>
     <h1>{{board.title}}</h1>
     <h4>{{board.about}}</h4>
 </div>
+<div>
+    <img src="{{board.image}}" alt={{board.title}}/>
+</div>
+<div>
+    <a class="waves-effect waves-light btn-small" href="{% url 'board_update' board.pk %}">Edit Board</a>
+    <a class="waves-effect waves-light btn-small" href="{% url 'board_delete' board.pk %}">Delete Board</a>
+</div>
 
+<div>
+    <h3>Gift Ideas</h3>
+    {% for gift in board.gifts.all %}
+    <div>
+        <span>{{forloop.counter}}</span>
+        <span><b>{{gift.idea}}</b></span>
+        <a href="{{gift.link}}">
+            <img src="{{gift.image}}" alt={{gift.idea}}/>
+        </a>
+        <p>Date to purchase by: {{gift.date_needed}}</p>
+    </div>
+</div>
+{% endfor %}
+
+<h4>Add a new gift idea</h4>
 <!-- adding form for new gift_idea -->
 <form form action="{% url 'gift_create' board.pk%}" method="post">
     {% csrf_token %}
@@ -57,24 +69,14 @@
             />
         </div>
         <div>
-            <input type="submit" value="Add Gift Idea"/>
+            <button class="btn waves-effect waves-light" type="submit" value="Add Gift Idea">Submit
+                <i class="material-icons right">send</i>
+            </button>
         </div>
         
     </div>
 
 </form>
 
-<div>
-    <h3>Gift Ideas</h3>
-    {% for gift in board.gifts.all %}
-    <div>
-        <span>{{forloop.counter}}</span>
-        <span><b>{{gift.idea}}</b></span>
-        <a href="{{gift.link}}">
-            <img src="{{gift.image}}" alt={{gift.idea}}/>
-        </a>
-        <p>Date to purchase by: {{gift.date_needed}}</p>
-    </div>
-</div>
-{% endfor %}
+
 {% endblock %}

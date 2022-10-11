@@ -13,7 +13,9 @@
     text-align: center;
 }
 
-
+h3 > span {
+    color:cadetblue;
+}
 /* h4 {
     color: red;
 } */
