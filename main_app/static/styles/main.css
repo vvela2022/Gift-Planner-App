@@ -16,6 +16,14 @@
 h3 > span {
     color:cadetblue;
 }
+
+.board-img {
+    max-width: 500px;
+}
+
+.gift-img {
+    max-width: 300px;
+}
 /* h4 {
     color: red;
 } */

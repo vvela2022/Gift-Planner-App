@@ -6,7 +6,7 @@
     <h4>{{board.about}}</h4>
 </div>
 <div>
-    <img src="{{board.image}}" alt={{board.title}}/>
+    <img class="board-img" src="{{board.image}}" alt={{board.title}}/>
 </div>
 <div>
     <a class="waves-effect waves-light btn-small" href="{% url 'board_update' board.pk %}">Edit Board</a>
@@ -20,7 +20,7 @@
         <span>{{forloop.counter}}</span>
         <span><b>{{gift.idea}}</b></span>
         <a href="{{gift.link}}">
-            <img src="{{gift.image}}" alt={{gift.idea}}/>
+            <img class="gift-img" src="{{gift.image}}" alt={{gift.idea}}/>
         </a>
         <p>Date to purchase by: {{gift.date_needed}}</p>
     </div>
