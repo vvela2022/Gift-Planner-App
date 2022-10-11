@@ -1,0 +1,19 @@
+.home-container {
+    max-width: 1000px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.carousel-container {
+    width: 500px;
+    margin: auto;
+}
+
+.home-welcome {
+    text-align: center;
+}
+
+
+/* h4 {
+    color: red;
+} */

@@ -73,6 +73,8 @@ class Gift_IdeaCreate(View):
         board = Board.objects.get(pk=pk)
         Gift_Idea.objects.create(idea=idea, image=image, link=link, date_needed=date_needed, board=board)
         return redirect('board_detail', pk=pk)
+
+
    
 class Signup(View):
     def get(self, request):
