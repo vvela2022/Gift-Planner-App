@@ -11,5 +11,5 @@ urlpatterns= [
     path('boards/<int:pk>/update', views.BoardUpdate.as_view(), name='board_update'),
     path('boards/<int:pk>/delete', views.BoardDelete.as_view(), name='board_delete'),
     path('boards/<int:pk>/gifts/new/', views.Gift_IdeaCreate.as_view(), name='gift_create'),
-    path('accounts/signup/', views.Signup.as_view(), name="signup")
+    path('accounts/signup/', views.Signup.as_view(), name="signup"),
 ]
