@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Update {{board.title}}</h1>
 <form action="" method="post">
-    {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit"/>
+    {% csrf_token %} {{form.as_p}} <button class="btn waves-effect waves-light btn-small" value="Submit">Submit</button>
 </form>
 
 {% endblock %}
