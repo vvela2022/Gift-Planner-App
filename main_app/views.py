@@ -55,6 +55,7 @@ class BoardUpdate(UpdateView):
     model = Board
     fields = ['title', 'image', 'about']
     template_name = 'board_update.html'
+    
     def get_success_url(self):
         return reverse('board_detail', kwargs={'pk': self.object.pk})
 

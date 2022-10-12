@@ -2,8 +2,8 @@
 {% block title %}Board Detail{% endblock %}
 {% block content %}
 <div>
-    <h1>{{board.title}}</h1>
-    <h4>{{board.about}}</h4>
+    <h3>{{board.title}}</h3>
+    <h6>{{board.about}}</h6>
 </div>
 <div>
     <img class="board-img" src="{{board.image}}" alt={{board.title}}/>
@@ -13,21 +13,28 @@
     <a class="waves-effect waves-light btn-small" href="{% url 'board_delete' board.pk %}">Delete Board</a>
 </div>
 
-<div>
-    <h3>Gift Ideas</h3>
+<h3>Gift Ideas</h3>
+<div class="row">
     {% for gift in board.gifts.all %}
-    <div>
-        <span>{{forloop.counter}}</span>
-        <span><b>{{gift.idea}}</b></span>
-        <a href="{{gift.link}}">
-            <img class="gift-img" src="{{gift.image}}" alt={{gift.idea}}/>
-        </a>
-        <p>Date to purchase by: {{gift.date_needed}}</p>
+    <div class="col s6 m3">
+        <div class="card medium">
+            <div class="card-image">
+                <img class="gift-img" src="{{gift.image}}" alt={{gift.idea}}/>
+            </div>
+            <div class="card-content">
+                <span><b>{{gift.idea}}</b></span>
+                <p>Date to purchase by: {{gift.date_needed}}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{gift.link}}">Link to Item</a>
+            </div>
+        </div>
     </div>
-</div>
 {% endfor %}
+</div> 
 
-<h4>Add a new gift idea</h4>
+
+<h4>Add a new gift idea to board: {{board.title}}</h4>
 <!-- adding form for new gift_idea -->
 <form form action="{% url 'gift_create' board.pk%}" method="post">
     {% csrf_token %}
