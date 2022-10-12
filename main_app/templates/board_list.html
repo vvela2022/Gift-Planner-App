@@ -4,10 +4,9 @@
 <h3>Boards for: <span>{{user.username}}</span></h3>
 <h6>{{header}}</h6>
 
-<form>
-    <div>
+<form class="search-bar">
         <div>
-            <input class="input" type="text" name="title" placeholder="board title"/>
+            <input class="search-input" type="text" name="title" placeholder="board title"/>
         </div>
         <div>
             <button class="btn waves-effect waves-light" type="submit">Search
@@ -19,9 +18,8 @@
             </a>
             
         </div>
-    </div>
 </form>
-<div>
+<div class="add-button-container">
     <a class="btn-floating btn-large waves-effect waves-light red" href="{% url 'board_create' %}">
         <i class="material-icons">add</i>
     </a>
@@ -32,7 +30,7 @@
     <div class="row">
         {% for board in boards %}
         <div class="col s6 m3">
-            <div class="card large">
+            <div class="card large hoverable">
                 <div class="card-image">
                     <a href="{% url 'board_detail' board.pk %}">
                     <img src="{{board.image}}" alt="{{board.title}}"/>

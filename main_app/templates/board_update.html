@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Edit Board{% endblock %}
 {% block content %}
-<h1>Update {{board.title}}</h1>
-<form action="" method="post">
-    {% csrf_token %} {{form.as_p}} <button class="btn waves-effect waves-light btn-small" value="Submit">Submit</button>
-</form>
+<h4>Update Board: {{board.title}}</h4>
+<div class="update-form">
+    <form action="" method="post">
+        {% csrf_token %} {{form.as_p}} <button class="btn waves-effect waves-light btn-small" value="Submit">Submit</button>
+    </form>
+</div>
+
 
 {% endblock %}

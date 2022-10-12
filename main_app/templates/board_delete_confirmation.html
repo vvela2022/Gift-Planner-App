@@ -1,12 +1,15 @@
 {% extends 'base.html' %} 
 {% block title %}Board Delete Confirmation{% endblock %}
 {% block content %}
-<h4>Are you sure you want to Delete {{board.title}}</h4>
-<form method="post">
-    {% csrf_token %}
-        <button class="btn waves-effect waves-light btn-small" type="submit">Confirm</button>
-</form>
-<a href="{% url 'board_detail' board.pk %}">
-    <button class="btn waves-effect waves-light btn-small">Cancel</button>
-</a>
+<h4>Are you sure you want to Delete Board: {{board.title}}</h4>
+<div class="button-container">
+    <form method="post">
+        {% csrf_token %}
+            <button class="btn waves-effect waves-light btn-small" type="submit">Confirm</button>
+    </form>
+    <a href="{% url 'board_detail' board.pk %}">
+        <button class="btn waves-effect waves-light btn-small">Cancel</button>
+    </a>
+</div>
+
 {% endblock %}
