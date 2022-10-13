@@ -17,8 +17,6 @@ from django.utils.decorators import method_decorator
 class Home(TemplateView):
     template_name = "home.html"
 
-class About(TemplateView):
-    template_name = "about.html"
 
 @method_decorator(login_required, name='dispatch')
 class BoardList(TemplateView):
