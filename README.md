@@ -21,7 +21,7 @@
 ## Functionality
 ### Screenshots
 ![Board List](assets/Board%20List%20Page.png)
-![Board Detail](assets/Board%20Details.png)
+![Board Detail](assets/Board_Detail.png)
 ![Add a Gift](assets/Add%20a%20gift%20.png)
 
 ## Technologies Used
