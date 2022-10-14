@@ -16,7 +16,7 @@
 ![Home Page](assets/Home%20Page.png)
 ![Board List](assets/Board%20List.png)
 ![Board Details](assets/Board%20Details.png)
-<details>
+</details>
 
 ### Data Models
 ![Gift Planner ERD](assets/Gift%20Planner%20ERD.png)
