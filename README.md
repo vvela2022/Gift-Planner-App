@@ -1,7 +1,7 @@
 # Gift-Planner-App
-## Planning Deliverables
-### Scope
-- A fullstack Django app that allows users to create boards that function as containers for gift ideas. 
+## Planning 
+### App Description
+-  Gift Planner is a fullstack Django application that allows users to upon signing up for an account, create boards that function as containers for their gift ideas. Users are able to add new, edit, and delete boards with their desired themes. They can be related to people ie: "gifts for my brother" or related to a holiday or event ie: "Christmas gifts". Within each board, users can add a specific gift idea. When a user clicks "create" a user will be prompted to input the gift idea name, image, link to gift, and the date by which to purchase the gift.
 
 ### User Stories
 - A user can create a board for a person, subject, time of year (Ie: Christmas Ideas, Ideas for Mom, Birthday Ideas). 
@@ -17,29 +17,23 @@
 
 ### Data Models
 ![Gift Planner ERD](assets/Gift%20Planner%20ERD.png)
-### Milestones
-By Monday OCT 10th EOD
-- Django App Initialized and Created
-- Initial URLs, Views, and Templates created and tested w/ mock data
 
-By Tuesday OCT 11th EOD
-- Database created and data input via admin console
-- CRUD functionality completed for 1 model
-- Starting on CRUD functionality for 2nd model
+## Functionality
+### Screenshots
+![Board List](assets/Board%20List%20Page.png)
+![Board Detail](assets/Board%20Details.png)
+![Add a Gift](assets/Add%20a%20gift%20.png)
 
-By Wednesday OCT 12th EOD
-- Create & Delete Functionality complete 2nd and 3rd Models
+## Technologies Used
+- Django/Python
+- PostgreSQL 
+- Materialize
 
-By Thursday OCT 13th EOD
-- Implement styling w/ framework (Bootstrap or Bulma)
-- Experement with stretch features
-- Deployment if time
+## Getting Started
+https://gift-planner1.herokuapp.com/
 
-By Friday OCT 14th EOD
-- Deployment to Heroku
-- Continue working through stretch features
-    - Edit for 2nd and 3rd models
-    - Animations/Styling
-    - Another relationship
-
+- Click Signup to create an account
+- Once you hit submit, you will be taken to the boards page.
+- Click on the plus key to add a new board
+- Fill out the information requested in the form and you're all set!
 

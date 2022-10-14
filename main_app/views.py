@@ -73,10 +73,6 @@ class Gift_IdeaCreate(View):
         Gift_Idea.objects.create(idea=idea, image=image, link=link, date_needed=date_needed, board=board)
         return redirect('board_detail', pk=pk)
 
-# class Gift_IdeaDelete(DeleteView):
-#     model= Gift_Idea
-#     template_name = 'gift_idea_delete_confirmation.html'
-#     success_url = '/boards/<int:pk>/'
    
 class Signup(View):
     def get(self, request):
