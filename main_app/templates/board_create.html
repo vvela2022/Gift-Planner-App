@@ -2,11 +2,15 @@
 {% block title %}New Board{% endblock %}
 {% block content %}
 <h4>Add a Board</h4>
+<div class="add-board">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn waves-effect waves-light">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
 
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit"/>
-</form>
 
 {% endblock %}

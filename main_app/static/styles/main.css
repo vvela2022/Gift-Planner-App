@@ -1,5 +1,4 @@
 
-
 .home-container {
     max-width: 1000px;
     margin: auto;
@@ -23,7 +22,7 @@ h3 > span {
     max-width: 100px;
 }
 
-.search-bar, .gift-form, .update-form {
+.search-bar, .gift-form, .update-form, .add-board, .login-form, .signup-form {
     width: 500px;
     margin-left: 20px;
 }
