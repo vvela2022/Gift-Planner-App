@@ -10,10 +10,13 @@
 - A user can add or remove a gift idea within a board 
 - A user can only see the boards they’ve created 
 
-### Wireframes
+<details>
+<summary>### Wireframes</summary>
+<br>
 ![Home Page](assets/Home%20Page.png)
 ![Board List](assets/Board%20List.png)
 ![Board Details](assets/Board%20Details.png)
+<details>
 
 ### Data Models
 ![Gift Planner ERD](assets/Gift%20Planner%20ERD.png)
