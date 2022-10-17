@@ -24,6 +24,10 @@
 ![Board Detail](assets/Board_Detail.png)
 ![Add a Gift](assets/Add%20a%20gift%20.png)
 
+### Code Snipets
+![Models](assets/Models.png)
+![Views](assets/Views.png)
+
 ## Technologies Used
 - Django/Python
 - PostgreSQL 
