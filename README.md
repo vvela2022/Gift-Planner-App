@@ -26,7 +26,9 @@
 
 ### Code Snipets
 ![Models](assets/Models.png)
+- Models for Board and Gift Ideas
 ![Views](assets/Views.png)
+- A user can only see the home page if not logged in.
 
 ## Technologies Used
 - Django/Python
